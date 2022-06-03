@@ -26,7 +26,7 @@
                         <th scope="row">{{ $post->id }}</th>
                         <td>{{ $post->title }}</td>
                         <td>{{ substr($post->body, 30).'...' }}</td>
-                        <td></td>
+                        <td>{{ $post->category->name }}</td>
                         <td>
                             <button class="btn btn-outline-info">Show</button>
                             <button class="btn btn-outline-warning">Edit</button>
