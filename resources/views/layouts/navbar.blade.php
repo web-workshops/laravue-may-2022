@@ -14,9 +14,26 @@
             <a class="nav-link" href="/post">Posts</a>
           </li>
         </ul>
-        <form>
-          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-        </form>
+        <ul class="d-flex">
+            @if (Route::has('login'))>
+                @auth
+                <li class="nav-item">
+                    <a href="{{ url('/home') }}" class="nav-link">Home</a>
+                </li>
+                @else
+                <li class="nav-item">
+                    <a href="{{ route('login') }}" class="nav-link">Log in</a>
+                </li>
+
+                    @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a href="{{ route('register') }}" class="nav-link">Register</a>
+                        </li>
+                    @endif
+                @endauth
+            </div>
+        @endif
+        </ul>
       </div>
     </div>
   </nav>
