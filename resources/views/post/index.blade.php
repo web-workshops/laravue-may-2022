@@ -9,6 +9,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body>
+    @include('layouts.navbar')
     <div class="container py-4">
         <table class="table">
             <thead>
