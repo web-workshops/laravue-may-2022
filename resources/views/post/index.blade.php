@@ -5,7 +5,7 @@
             {{ __('Posts list') }}
         </h2>
     </x-slot>
-
+    <a href="{{route('post.create')}}" type="button" class="btn btn-primary">New post</a>
     <table class="table">
         <thead>
           <tr>

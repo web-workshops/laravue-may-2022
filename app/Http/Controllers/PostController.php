@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -26,7 +28,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        $authors = User::all();
+        return view('post.create', compact('categories', 'authors'));
     }
 
     /**
@@ -37,7 +41,14 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $post = new Post;
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->category_id = $request->category;
+        $post->user_id = $request->user;
+        $post->save();
+        dd('Post added successfully');
     }
 
     /**
