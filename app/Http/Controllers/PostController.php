@@ -48,7 +48,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::with('category', 'user')->find($id);
+        return view('post.show', compact('post'));
     }
 
     /**
