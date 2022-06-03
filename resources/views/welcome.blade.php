@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<x-guest-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Posts list') }}
+        </h2>
+    </x-slot>
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
-
-        <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/blog.css') }}" rel="stylesheet">
-
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
-    </head>
-    <body class="antialiased">
-    @include('layouts.navbar')
     <div class="container">
         <header class="blog-header lh-1 py-3">
           <div class="row flex-nowrap justify-content-between align-items-center">
@@ -32,7 +18,8 @@
               <a class="link-secondary" href="#" aria-label="Search">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
               </a>
-              <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+              <a class="btn btn-sm btn-outline-secondary" href="/login">Login</a>
+              <a class="btn btn-sm btn-outline-secondary" href="/register">Register</a>
             </div>
           </div>
         </header>
@@ -270,5 +257,4 @@
           <a href="#">Back to top</a>
         </p>
       </footer>
-    </body>
-</html>
+</x-guest-layout>
